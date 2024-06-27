@@ -109,9 +109,7 @@ Content-Type: application/json
 
 #### Example Response
 ```json
-{
-    "message": "OK"
-}
+"OK"
 ```
 
 ## Data Models
