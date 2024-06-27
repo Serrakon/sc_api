@@ -18,7 +18,7 @@ Retrieve the details of a worksheet by its JobNo.
 
 #### Example Request
 ```http
-GET /api/customer/5?secret=1234567890
+GET /api/customer/9999?secret=1234567890
 ```
 
 #### Example Response
@@ -72,7 +72,7 @@ Add a new customer worksheet to the system.
 
 #### Example Request
 ```http
-POST /api/customer?id=5&secret=1234567890
+POST /api/customer?secret=1234567890
 Content-Type: application/json
 
 {
