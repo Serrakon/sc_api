@@ -5,7 +5,7 @@
 ### 1. Get Customer Worksheet by JobNo
 Retrieve the details of a worksheet by its JobNo.
 
-**Endpoint:** `GET /api/customer/{id}`
+**Endpoint:** `GET /api/customer/{id}?secret=1234567890`
 
 #### Parameters
 - **id** (int): The JobNo of the worksheet to retrieve.
@@ -58,7 +58,7 @@ GET /api/customer/9999?secret=1234567890
 ### 2. Add New Customer
 Add a new customer worksheet to the system.
 
-**Endpoint:** `POST /api/customer`
+**Endpoint:** `POST /api/customer?secret=1234567890`
 
 #### Parameters
 - **id** (int): An identifier for the new customer.
