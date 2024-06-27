@@ -1,17 +1,8 @@
 # Customer API Reference Document
 
-## Overview
-
-This document provides an overview of the endpoints available in the `CustomerController` for managing worksheet data related to customer installations and other related operations. The API is secured and requires authorization through a secret key.
-
 ## Endpoints
 
-### 1. Authorize User
-This is a helper function that validates the secret key provided in the request.
-
-**Method:** `private User Authorize(string secret)`
-
-### 2. Get Worksheet by ID
+### 1. Get Customer Worksheet by JobNo
 Retrieve the details of a worksheet by its JobNo.
 
 **Endpoint:** `GET /api/customer/{id}`
@@ -27,13 +18,13 @@ Retrieve the details of a worksheet by its JobNo.
 
 #### Example Request
 ```http
-GET /api/customer/5?secret=api_DE07633C-2EA4-4D89-9DC5-D627EF2D516A
+GET /api/customer/5?secret=1234567890
 ```
 
 #### Example Response
 ```json
 {
-    "jobNo": 5,
+    "jobNo": 9999,
     "name": "Customer Name",
     "location": "Location",
     "city": "City",
@@ -49,8 +40,8 @@ GET /api/customer/5?secret=api_DE07633C-2EA4-4D89-9DC5-D627EF2D516A
     "installedBy": "Installer Name",
     "moneyReceivedBy": "Receiver Name",
     "completionDate": "27/06/2024 14:30:00",
-    "antennaName": "Antenna Model",
-    "routerName": "Router Model",
+    "antennaName": "Antenna",
+    "routerName": "Router",
     "tvMac": "00:1B:44:11:3A:B8",
     "routerMac": "00:1B:44:11:3A:B9",
     "radioName": "Radio Model",
@@ -64,7 +55,7 @@ GET /api/customer/5?secret=api_DE07633C-2EA4-4D89-9DC5-D627EF2D516A
 }
 ```
 
-### 3. Add New Customer
+### 2. Add New Customer
 Add a new customer worksheet to the system.
 
 **Endpoint:** `POST /api/customer`
@@ -81,11 +72,11 @@ Add a new customer worksheet to the system.
 
 #### Example Request
 ```http
-POST /api/customer?id=5&secret=api_DE07633C-2EA4-4D89-9DC5-D627EF2D516A
+POST /api/customer?id=5&secret=1234567890
 Content-Type: application/json
 
 {
-    "jobNo": 5,
+    "jobNo": 99991,
     "name": "Customer Name",
     "location": "Location",
     "city": "City",
@@ -101,8 +92,8 @@ Content-Type: application/json
     "installedBy": "Installer Name",
     "moneyReceivedBy": "Receiver Name",
     "completionDate": "27/06/2024 14:30:00",
-    "antennaName": "Antenna Model",
-    "routerName": "Router Model",
+    "antennaName": "Antenna",
+    "routerName": "Router",
     "tvMac": "00:1B:44:11:3A:B8",
     "routerMac": "00:1B:44:11:3A:B9",
     "radioName": "Radio Model",
@@ -113,39 +104,6 @@ Content-Type: application/json
     "technicianNotes": "Technician notes here",
     "planId": 1,
     "count": 2
-}
-```
-
-#### Example Response
-```json
-{
-    "message": "OK"
-}
-```
-
-### 4. Add Installation
-Add an installation to a worksheet.
-
-**Endpoint:** `POST /api/customer/addInstallation`
-
-#### Parameters
-- **worksheetId** (int): The ID of the worksheet.
-- **mac** (string): The MAC address for the installation.
-- **userId** (int): The ID of the user performing the installation.
-
-#### Response
-- **200 OK**: Returns a success message if the installation is added successfully.
-- **404 Not Found**: Returns an error message if no tickets for the plan are left.
-
-#### Example Request
-```http
-POST /api/customer/addInstallation
-Content-Type: application/json
-
-{
-    "worksheetId": 5,
-    "mac": "00:1B:44:11:3A:B7",
-    "userId": 2
 }
 ```
 
@@ -197,15 +155,5 @@ public class WorksheetApiData
 }
 ```
 
-### User
-This class is not fully detailed in the provided code, but it represents the user data model used for authorization.
-
-### Worksheet
-This class represents the worksheet data model used to store worksheet details in the database.
-
-### Ticket
-This class represents the ticket data model used for managing ticket information related to worksheets.
-
-## Conclusion
 
 This document provides a comprehensive overview of the Customer API, including endpoints, request/response formats, and data models. For further details and updates, please refer to the actual code implementation and comments within the code.
