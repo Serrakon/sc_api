@@ -153,5 +153,3 @@ public class WorksheetApiData
 }
 ```
 
-
-This document provides a comprehensive overview of the Customer API, including endpoints, request/response formats, and data models. For further details and updates, please refer to the actual code implementation and comments within the code.
