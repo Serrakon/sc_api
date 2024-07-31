@@ -61,9 +61,8 @@ Add a new customer worksheet to the system.
 **Endpoint:** `POST /api/customer?secret=1234567890`
 
 #### Parameters
-- **id** (int): An identifier for the new customer.
 - **secret** (string): The authorization secret key.
-- **order** (WorksheetApiData): The data for the new worksheet.
+- **order** (request body json): The data for the new worksheet.
 
 #### Response
 - **200 OK**: Returns a success message if the worksheet is added successfully.
